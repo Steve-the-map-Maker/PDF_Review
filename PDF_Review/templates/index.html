@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF_review!</title>
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  </head>
+  <body>
+    <!-- Canvas for PDF.js -->
+    <canvas id="pdf-viewer"></canvas>
+
+    <!-- Form to upload PDF -->
+    <form id="pdf-upload-form">
+      <input type="text" id="pdf-title" placeholder="Enter PDF Title" />
+      <input type="file" id="pdf-file" />
+      <input type="text" id="pdf-owner" placeholder="Enter owner ID" />
+      <button type="submit">Upload PDF</button>
+    </form>
+
+    <!-- Form to capture comments -->
+    <form id="comment-form">
+      <input type="text" id="comment-text" placeholder="Add your comment" />
+      <button type="submit">Submit Comment</button>
+    </form>
+
+    <!-- Drop-down list for uploaded PDFs -->
+    <select id="pdf-dropdown">
+      <option value="" disabled selected>Select a PDF</option>
+    </select>
+
+    <!-- External JavaScript file -->
+    <!-- Correct -->
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    <script src="{% static 'js/pdf_viewer.js' %}"></script>
+
+    <script src="{% static 'js/pdf_upload.js' %}"></script>
+  </body>
+</html>
